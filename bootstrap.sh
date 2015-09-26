@@ -13,6 +13,12 @@ source /home/vagrant/.rvm/scripts/rvm
 # Bundler
 rvm @global do gem install bundler
 
+# Jekyll
+rvm gemset create blog-stable
+rvm gemset use  blog-stable
+cd /vagrant
+bundle install
+
 # dotfiles
 mkdir .dotfiles
 cd .dotfiles
