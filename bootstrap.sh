@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt-get -y install \
+sudo apt-get update && sudo apt-get install -y \
     nodejs \
     git \
     subversion
