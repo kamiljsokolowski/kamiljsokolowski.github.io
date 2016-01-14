@@ -13,3 +13,7 @@ def build(release="stable"):
     with cd(code_dir):
         run('bundle install')
 
+def serve():
+    with cd(code_dir):
+        run('bundle exec jekyll serve --watch')
+
