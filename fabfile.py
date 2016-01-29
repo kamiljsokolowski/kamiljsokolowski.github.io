@@ -13,7 +13,9 @@ def build(release="stable"):
     with cd(code_dir):
         run('bundle install')
 
-def serve():
+def serve(drafts=False):
     with cd(code_dir):
-        run('bundle exec jekyll serve --watch')
+        if drafts:
+            run('bundle exec jekyll serve --force_polling --drafts')
+        run('bundle exec jekyll serve --force_polling')
 
