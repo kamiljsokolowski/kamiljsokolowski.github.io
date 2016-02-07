@@ -50,11 +50,13 @@ permalink:   pretty
 exclude: 
   - CNAME
   - Gemfile
+  - Gemfile.lock
   - Rakefile
   - README.md
   - .gitignore
   - .sass-cache
-  - Gemfile.lock
+  - fabfile*
+  - bootstrap*
 
 # Sass conversion configs
 sass:
