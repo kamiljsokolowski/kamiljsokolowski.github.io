@@ -4,5 +4,5 @@ require 'json'
 require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
-gem 'github-pages', '= 43'
+gem 'github-pages', '= 44'
 gem 'rake'
