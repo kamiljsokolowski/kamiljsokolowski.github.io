@@ -8,6 +8,12 @@ def vagrant():
     result = local('vagrant ssh-config |grep IdentityFile', capture=True)
     env.key_filename = result.split()[1]
 
+def install_ruby(version="latest"):
+    if version is 'latest':
+        run('rvm install ruby --latest')
+    else:
+        run('rvm install ruby %s' % version)
+
 def build(release="stable"):
     run('rvm gemset use blog-%s' % release)
     with cd(code_dir):
