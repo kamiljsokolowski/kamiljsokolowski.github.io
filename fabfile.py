@@ -1,6 +1,7 @@
 from fabric.api import env, local, run, cd
 
 code_dir = '/vagrant'
+default_interpreter = '2.1.7'
 
 def vagrant():
     env.user = 'vagrant'
@@ -13,6 +14,13 @@ def install_ruby(version="latest"):
         run('rvm install ruby --latest')
     else:
         run('rvm install ruby %s' % version)
+
+def create_gemset(name='stable', version=default_interpreter):
+    run('rvm %s@blog-%s --create' % (version, name))
+
+#def use_gemset(name='stable', version=default_interpreter):
+#    run('rvm use %s' % version)
+#    run('rvm %s@blog-%s' % (version, name))
 
 def build(release="stable"):
     run('rvm gemset use blog-%s' % release)
