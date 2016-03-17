@@ -29,9 +29,9 @@ def build(release="stable"):
     with cd(code_dir):
         run('rvm @blog-%s do bundle install' % release)
 
-def serve(drafts=False):
+def serve(release="stable", drafts=False):
     with cd(code_dir):
         if drafts:
-            run('bundle exec jekyll serve --force_polling --drafts')
-        run('bundle exec jekyll serve --force_polling')
+            run('rvm @blog-%s do bundle exec jekyll serve --force_polling --drafts' % release)
+        run('rvm @blog-%s do bundle exec jekyll serve --force_polling' % release)
 
