@@ -32,6 +32,6 @@ def build(release="stable"):
 def serve(release="stable", drafts=False):
     with cd(code_dir):
         if drafts:
-            run('rvm @blog-%s do bundle exec jekyll serve --force_polling --drafts' % release)
-        run('rvm @blog-%s do bundle exec jekyll serve --force_polling' % release)
+            run('rvm @blog-%s do bundle exec jekyll serve --port 4000 --host 0.0.0.0 --force_polling --drafts' % release)
+        run('rvm @blog-%s do bundle exec jekyll serve --port 4000 --host 0.0.0.0 --force_polling' % release)
 
