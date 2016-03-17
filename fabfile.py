@@ -18,6 +18,9 @@ def install_ruby(version="latest"):
 def create_gemset(name='stable', version=default_interpreter):
     run('rvm %s@blog-%s --create' % (version, name))
 
+def delete_gemset(name='stable', version=default_interpreter):
+    run('rvm %s do rvm --force gemset delete blog-%s' % (version, name))
+
 #def use_gemset(name='stable', version=default_interpreter):
 #    run('rvm use %s' % version)
 #    run('rvm %s@blog-%s' % (version, name))
