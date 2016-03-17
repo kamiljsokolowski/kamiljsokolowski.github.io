@@ -26,9 +26,8 @@ def delete_gemset(name='stable', version=default_interpreter):
 #    run('rvm %s@blog-%s' % (version, name))
 
 def build(release="stable"):
-    run('rvm gemset use blog-%s' % release)
     with cd(code_dir):
-        run('bundle install')
+        run('rvm @blog-%s do bundle install' % release)
 
 def serve(drafts=False):
     with cd(code_dir):
