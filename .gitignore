@@ -1,2 +1,7 @@
 *.swp
+.jekyll-metadata
 .vagrant
+.sass-cache
+_site
+rafts
+tmp
