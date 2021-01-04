@@ -1,0 +1,19 @@
+---
+- name: devenv-ubuntu2004
+  box: ubuntu/focal64
+  check_updates: false
+  net: private_network
+  ip: 10.10.1.1
+  mem: 8192
+  forwarded_ports:
+    - name: http
+      host_port: 8080
+      guest_port: 80
+    - name: https
+      host_port: 8443
+      guest_port: 443
+    - name: jekyll
+      host_port: 4000
+      guest_port: 4000
+  scripts:
+    - bootstrap.sh
